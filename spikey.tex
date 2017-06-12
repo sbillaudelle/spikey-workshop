@@ -1,6 +1,9 @@
 \documentclass[aspectratio=169]{beamer}
 \usetheme{metropolis}
 
+\usepackage{esdiff}
+\usepackage{siunitx}
+
 \title{BrainScaleS Workshop}
 \subtitle{4th HBP School}
 
@@ -8,11 +11,154 @@
 \author{Korbinian Schreiber \& Sebastian Billaudelle}
 \institute{Kirchhoff-Institute for Physics, Heidelberg University}
 
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+	\node[shape=circle,fill=white,draw=mDarkTeal,inner sep=3pt] (char) {\color{white}\textbf{#1}};
+	\node[shape=circle,fill=mDarkTeal,inner sep=2pt] (char) {\color{white}\textbf{#1}};
+	}}
+
 \begin{document}
 
 \maketitle
 
 \section{First Section}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{assets/three_column_background.pdf}}%
+\begin{frame}[fragile]
+	\frametitle{Analog Neuromorphic Hardware}
+
+	\vspace{-30pt}
+	\begin{columns}
+		\column{0.33\paperwidth}
+		\begin{center}
+			\circled{1}
+			\vspace{20pt}
+
+			observations
+		\end{center}
+	
+		\column{0.33\paperwidth}
+		\begin{center}
+			\circled{2}
+			\vspace{20pt}
+
+			mathematical model
+		\end{center}
+		
+		\column{0.33\paperwidth}
+		\begin{center}
+			\circled{3}
+			\vspace{20pt}
+
+			hardware realization
+		\end{center}
+	\end{columns}
+
+	\vspace{10pt}
+	
+	\begin{columns}
+		\column{0.33\paperwidth}
+		\begin{center}
+			\includegraphics[width=0.8\textwidth]{assets/trace.pdf}
+		\end{center}
+	
+		\column{0.33\paperwidth}
+		\begin{center}
+			\vspace{-20pt}
+			\begin{gather*}
+				\scriptstyle
+				C \diff{V}{t} = -g_\text{L} \left( V - E_\text{L} \right) + g_\text{L} \Delta_\text{T} \exp{\frac{V-V_\text{T}}{\Delta_\text{T}}} - w + I \\
+				\scriptstyle
+				\tau_\text{w} \diff{w}{t} = a \left( V - E_\text{L} \right) - w
+			\end{gather*}
+		\end{center}
+		
+		\column{0.33\paperwidth}
+		\begin{center}
+			\includegraphics[width=0.8\textwidth]{assets/spikey.jpg}
+		\end{center}
+	\end{columns}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{assets/five_column_background.pdf}}%
+\begin{frame}[fragile]
+	\frametitle{Roadmap}
+
+	\begin{columns}
+		\column{0.2\paperwidth}
+		\begin{center}
+			\circled{2004}
+		\end{center}
+		\column{0.2\paperwidth}
+		\begin{center}
+			\circled{2010}
+		\end{center}
+		\column{0.2\paperwidth}
+		\begin{center}
+			\circled{2015}
+		\end{center}
+		\column{0.2\paperwidth}
+		\begin{center}
+			\circled{2017}
+		\end{center}
+		\column{0.2\paperwidth}
+		\begin{center}
+			\circled{2022}
+		\end{center}
+	\end{columns}
+
+	\vspace{20pt}
+
+	\begin{columns}[T]
+		\column{0.2\paperwidth}
+		\begin{center}
+			\textbf{\color{mDarkTeal}Spikey}
+		\end{center}
+		\begin{itemize}
+				\item single chip system
+				\item 384 LIF neurons
+		\end{itemize}
+		
+		\column{0.2\paperwidth}
+		\begin{center}
+			\textbf{\color{mDarkTeal}HICANN}
+		\end{center}
+		\begin{itemize}
+				\item \SI{180}{\nano\meter} CMOS
+				\item 512 AdEx neurons
+		\end{itemize}
+		
+		\column{0.2\paperwidth}
+		\begin{center}
+			\textbf{\color{mDarkTeal}20 Wafer System}
+		\end{center}
+		\begin{itemize}
+			\item 4 million neurons
+			\item 0.9 billion synapses
+		\end{itemize}
+		
+		\column{0.2\paperwidth}
+		\begin{center}
+			\textbf{\color{mDarkTeal}HICANN DLS}
+		\end{center}
+		\begin{itemize}
+			\item \SI{65}{\nano\meter} CMOS
+			\item PPU: integrated processing unit for advanced plasticity
+		\end{itemize}
+		
+		\column{0.2\paperwidth}
+		\begin{center}
+			\textbf{\color{mDarkTeal}500 Wafer System}
+		\end{center}
+		\begin{itemize}
+			\item 500 million neurons
+			\item 130 billion synapses
+		\end{itemize}
+	\end{columns}
+\end{frame}
+}
 
 \begin{frame}{First Frame}
 	Hello, world!
