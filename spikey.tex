@@ -167,7 +167,7 @@
 
 	\vspace{3ex}
 
-	Look out for:
+	\textbf{Look out for:}
 	\begin{itemize}
 		\item \mintinline{Python}{pynn.Population}
 		\item \mintinline{Python}{pynn.Projection}
@@ -176,7 +176,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{Creating (groups of) neurons}
-	Create \emph{populations} of neurons:
+	\textbf{Create \emph{populations} of neurons:}
 	\begin{minted}{python}
 params = {
     "v_thresh": -60.0
@@ -186,14 +186,14 @@ neurons = pynn.Population(42, pynn.IF_facets_hardware1, cellparams=params)
 
 	\vspace{3ex}
 
-	Get a list of default neuron parameters:
+	\textbf{Get a list of default neuron parameters:}
 	\begin{minted}{python}
 print pynn.IF_facets_hardware1.default_parameters
 	\end{minted}
 \end{frame}
 
 \begin{frame}[fragile]{Generating stimuli}
-	Create a stimulus from a spike train:
+	\textbf{Create a stimulus from a spike train:}
 	\begin{minted}{python}
 spike_train = np.arange(10.0, 101.0, 10.0)
 stimulus = pynn.Population(1, pynn.SpikeSourceArray, {"spike_times": spike_train})
@@ -201,7 +201,7 @@ stimulus = pynn.Population(1, pynn.SpikeSourceArray, {"spike_times": spike_train
 
 	\vspace{3ex}
 
-There is also a Poisson spike source:
+	\textbf{There is also a Poisson spike source:}
 	\begin{minted}{python}
 poisson_params = {
     "start": 10.0,
@@ -216,7 +216,7 @@ stimulus = pynn.Population(1, pynn.SpikeSourcePoisson, poisson_params)
 \end{frame}
 
 \begin{frame}[fragile]{Recording observables}
-	Spike times:
+	\textbf{Spike times:}
 	\begin{minted}{python}
 neurons.record()
 ...
@@ -225,7 +225,7 @@ spikes = neurons.getSpikes()
 
 	\vspace{3ex}
 	
-	\emph{Analog} membrane traces:
+	\textbf{\emph{Analog} membrane traces:}
 	\begin{minted}{python}
 pynn.record_v(neurons[0], "")
 	\end{minted}
