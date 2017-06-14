@@ -3,8 +3,16 @@
 
 \usepackage{esdiff}
 \usepackage{siunitx}
+
 \usepackage{minted}
 \setminted{fontsize=\scriptsize}
+
+\usepackage{tikz}
+
+\definecolor{blue}{HTML}{005B82}
+\definecolor{red}{HTML}{AF5A50}
+\definecolor{green}{HTML}{7D966E}
+\definecolor{orange}{HTML}{D7AA50}
 
 \title{BrainScaleS Workshop}
 \subtitle{4th HBP School}
@@ -238,9 +246,36 @@ pynn.record_v(neurons[0], "")
 \section{Tasks}
 
 \begin{frame}{Task 1: a single neuron}
+	\begin{columns}[onlytextwidth]
+		\begin{column}{0.48\textwidth}
+			\begin{center}
+				\begin{tikzpicture}
+					\node[circle,white,fill=red,text width=1.2cm,align=center] (stm) at (0,0) {\scriptsize\strut stimulus};
+					\node[circle,white,fill=red,text width=1.2cm,align=center] (nrn) at (4,0) {\scriptsize\strut neuron};
+
+					\draw[-stealth,thick,red] (stm) -- (nrn);
+				\end{tikzpicture}
+			\end{center}
+
+			\begin{itemize}
+				\item create a spike source
+				\item create a single LIF neuron
+				\item connect these two populations with maximum weight
+				\item record spikes and the membrane trace of the stimulated neuron
+			\end{itemize}
+		\end{column}
+		\hfill
+		\begin{column}{0.48\textwidth}
+			\begin{enumerate}
+				\item vary the synaptic weight and observe the membrane trace
+				\item play around with the inter-spike interval of the stimulating spike train
+				\item observe how the PSPs stack up and eventually cause the neuron to fire
+			\end{enumerate}
+		\end{column}
+	\end{columns}
 \end{frame}
 
-\begin{frame}{Task 2: a simple chain}
+\begin{frame}{Task 2: passing spikes}
 \end{frame}
 
 \end{document}
