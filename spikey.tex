@@ -304,7 +304,7 @@ pynn.record_v(neurons[0], "")
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Task 3: a synfire chain}
+\begin{frame}{Task 2: passing spikes}
 	\begin{columns}[onlytextwidth]
 		\begin{column}{0.48\textwidth}
 			\begin{center}
@@ -328,6 +328,52 @@ pynn.record_v(neurons[0], "")
 			\begin{enumerate}
 				\item think about different possibilities of creating and connecting the neurons
 				\item check that the stimulation is passed to the second neuron
+			\end{enumerate}
+		\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}{Task 3: a synfire chain}
+	\begin{center}
+		\begin{tikzpicture}
+			\node[circle,white,fill=red,text width=0.8cm,align=center] (stm) at (0.0,0) {\footnotesize\strut stim};
+			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex1) at (2.0,0) {\footnotesize\strut \# 1};
+			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex2) at (4.0,0) {\footnotesize\strut \# 2};
+			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex3) at (6.0,0) {\footnotesize\strut \# 3};
+			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex4) at (8.0,0) {\footnotesize\strut \# 4};
+			
+			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in1) at (2.0,-2) {\footnotesize\strut \# 1};
+			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in2) at (4.0,-2) {\footnotesize\strut \# 2};
+			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in3) at (6.0,-2) {\footnotesize\strut \# 3};
+			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in4) at (8.0,-2) {\footnotesize\strut \# 4};
+
+			\draw[-stealth,thick,red] (stm) -- (ex1);
+			
+			\draw[-stealth,thick,red] (ex1) -- (ex2);
+			\draw[-stealth,thick,red] (ex2) -- (ex3);
+			\draw[-stealth,thick,red] (ex3) -- (ex4);
+			
+			\draw[-stealth,thick,red] (ex1) -- (in2);
+			\draw[-stealth,thick,red] (ex2) -- (in3);
+			\draw[-stealth,thick,red] (ex3) -- (in4);
+			
+			\draw[-stealth,thick,blue] (in1) -- (ex1);
+			\draw[-stealth,thick,blue] (in2) -- (ex2);
+			\draw[-stealth,thick,blue] (in3) -- (ex3);
+			\draw[-stealth,thick,blue] (in4) -- (ex4);
+		\end{tikzpicture}
+	\end{center}
+	
+	\begin{columns}[onlytextwidth]
+		\begin{column}{0.48\textwidth}
+
+			\begin{itemize}
+				\item Lorem ipsum
+			\end{itemize}
+		\end{column}
+		\hfill
+		\begin{column}{0.48\textwidth}
+			\begin{enumerate}
+				\item dolor sit amet
 			\end{enumerate}
 		\end{column}
 	\end{columns}
