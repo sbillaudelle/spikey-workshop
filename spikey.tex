@@ -223,6 +223,33 @@ stimulus = pynn.Population(1, pynn.SpikeSourcePoisson, poisson_params)
 \end{frame}
 
 \begin{frame}[fragile]{Synaptic connections}
+	\textbf{Connect all pre-synaptic to all post-synaptic neurons:}
+	\begin{minted}{python}
+weight = 15 * pynn.getMinExcWeight()
+conn = pynn.AllToAllConnector(weights=weight)
+proj = pynn.Projection(pre, post, conn)
+	\end{minted}
+
+	\vspace{3ex}
+
+	\textbf{Specify connections in a list:}
+	\begin{minted}{python}
+conn = pynn.FromListConnector([(7, 13, w, d), (42, 0, w, d)])
+	\end{minted}
+
+	\vspace{3ex}
+
+	\textbf{Other connectors (look at specification):}
+	\begin{columns}[onlytextwidth]
+		\column{0.333\textwidth}
+		\mintinline{Python}{FixedNumberPreConnector}
+
+		\column{0.333\textwidth}
+		\mintinline{Python}{FixedNumberPostConnector}
+
+		\column{0.333\textwidth}
+		\mintinline{Python}{FixedProbabilityConnector}
+	\end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Recording observables}
