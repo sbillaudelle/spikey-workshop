@@ -250,8 +250,8 @@ pynn.record_v(neurons[0], "")
 		\begin{column}{0.48\textwidth}
 			\begin{center}
 				\begin{tikzpicture}
-					\node[circle,white,fill=red,text width=1.2cm,align=center] (stm) at (0,0) {\scriptsize\strut stimulus};
-					\node[circle,white,fill=red,text width=1.2cm,align=center] (nrn) at (4,0) {\scriptsize\strut neuron};
+					\node[circle,white,fill=red,text width=1.2cm,align=center] (stm) at (0,0) {\scriptsize\strut stim};
+					\node[circle,white,fill=red,text width=1.2cm,align=center] (nrn) at (3,0) {\scriptsize\strut \# 1};
 
 					\draw[-stealth,thick,red] (stm) -- (nrn);
 				\end{tikzpicture}
@@ -276,6 +276,61 @@ pynn.record_v(neurons[0], "")
 \end{frame}
 
 \begin{frame}{Task 2: passing spikes}
+	\begin{columns}[onlytextwidth]
+		\begin{column}{0.48\textwidth}
+			\begin{center}
+				\begin{tikzpicture}
+					\node[circle,white,fill=red,text width=1.0cm,align=center] (stm) at (0.0,0) {\footnotesize\strut stim};
+					\node[circle,white,fill=red,text width=1.0cm,align=center] (nr1) at (2.0,0) {\footnotesize\strut \# 1};
+					\node[circle,white,fill=red,text width=1.0cm,align=center] (nr2) at (4.0,0) {\footnotesize\strut \# 2};
+
+					\draw[-stealth,thick,red] (stm) -- (nr1);
+					\draw[-stealth,thick,red] (nr1) -- (nr2);
+				\end{tikzpicture}
+			\end{center}
+
+			\begin{itemize}
+				\item extend the network by adding another neuron
+				\item record and plot the spikes of both neurons
+			\end{itemize}
+		\end{column}
+		\hfill
+		\begin{column}{0.48\textwidth}
+			\begin{enumerate}
+				\item think about different possibilities of creating and connecting the neurons
+				\item check that the stimulation is passed to the second neuron
+			\end{enumerate}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Task 3: a synfire chain}
+	\begin{columns}[onlytextwidth]
+		\begin{column}{0.48\textwidth}
+			\begin{center}
+				\begin{tikzpicture}
+					\node[circle,white,fill=red,text width=1.0cm,align=center] (stm) at (0.0,0) {\footnotesize\strut stim};
+					\node[circle,white,fill=red,text width=1.0cm,align=center] (nr1) at (2.0,0) {\footnotesize\strut \# 1};
+					\node[circle,white,fill=red,text width=1.0cm,align=center] (nr2) at (4.0,0) {\footnotesize\strut \# 2};
+
+					\draw[-stealth,thick,red] (stm) -- (nr1);
+					\draw[-stealth,thick,red] (nr1) -- (nr2);
+				\end{tikzpicture}
+			\end{center}
+
+			\begin{itemize}
+				\item extend the network by adding another neuron
+				\item record and plot the spikes of both neurons
+			\end{itemize}
+		\end{column}
+		\hfill
+		\begin{column}{0.48\textwidth}
+			\begin{enumerate}
+				\item think about different possibilities of creating and connecting the neurons
+				\item check that the stimulation is passed to the second neuron
+			\end{enumerate}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \end{document}
