@@ -46,7 +46,7 @@
 
 			observations
 		\end{center}
-	
+
 		\column{0.33\paperwidth}
 		\begin{center}
 			\circled{2}
@@ -54,7 +54,7 @@
 
 			mathematical model
 		\end{center}
-		
+
 		\column{0.33\paperwidth}
 		\begin{center}
 			\circled{3}
@@ -65,13 +65,13 @@
 	\end{columns}
 
 	\vspace{10pt}
-	
+
 	\begin{columns}
 		\column{0.33\paperwidth}
 		\begin{center}
 			\includegraphics[width=0.8\textwidth]{assets/trace.pdf}
 		\end{center}
-	
+
 		\column{0.33\paperwidth}
 		\begin{center}
 			\vspace{-20pt}
@@ -80,7 +80,7 @@
 				C \diff{V}{t} = -g_\text{L} \left( V - E_\text{L} \right) + I_\text{syn}(t) \\
 			\end{gather*}
 		\end{center}
-		
+
 		\column{0.33\paperwidth}
 		\begin{center}
 			\includegraphics[width=0.8\textwidth]{assets/spikey.jpg}
@@ -128,7 +128,7 @@
 				\item single chip system
 				\item 384 LIF neurons
 		\end{itemize}
-		
+
 		\column{0.2\paperwidth}
 		\begin{center}
 			\textbf{\color{mDarkTeal}HICANN}
@@ -137,7 +137,7 @@
 				\item \SI{180}{\nano\meter} CMOS
 				\item 512 AdEx neurons
 		\end{itemize}
-		
+
 		\column{0.2\paperwidth}
 		\begin{center}
 			\textbf{\color{mDarkTeal}20 Wafer System}
@@ -146,7 +146,7 @@
 			\item 4 million neurons
 			\item 0.9 billion synapses
 		\end{itemize}
-		
+
 		\column{0.2\paperwidth}
 		\begin{center}
 			\textbf{\color{mDarkTeal}HICANN DLS}
@@ -155,7 +155,7 @@
 			\item \SI{65}{\nano\meter} CMOS
 			\item PPU: integrated processing unit for advanced plasticity
 		\end{itemize}
-		
+
 		\column{0.2\paperwidth}
 		\begin{center}
 			\textbf{\color{mDarkTeal}500 Wafer System}
@@ -234,7 +234,7 @@ spikes = neurons.getSpikes()
 	\end{minted}
 
 	\vspace{3ex}
-	
+
 	\textbf{\emph{Analog} membrane traces:}
 	\begin{minted}{python}
 pynn.record_v(neurons[0], "")
@@ -334,48 +334,67 @@ pynn.record_v(neurons[0], "")
 		\end{column}
 	\end{columns}
 \end{frame}
-\begin{frame}{Task 3: a synfire chain}
+\begin{frame}{Task 3: a closed synfire chain}
 	\begin{center}
-		\begin{tikzpicture}
-			\node[circle,white,fill=red,text width=0.8cm,align=center] (stm) at (0.0,0) {\footnotesize\strut stim};
-			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex1) at (2.0,0) {\footnotesize\strut \# 1};
-			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex2) at (4.0,0) {\footnotesize\strut \# 2};
-			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex3) at (6.0,0) {\footnotesize\strut \# 3};
-			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex4) at (8.0,0) {\footnotesize\strut \# 4};
-			
-			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in1) at (2.0,-2) {\footnotesize\strut \# 1};
-			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in2) at (4.0,-2) {\footnotesize\strut \# 2};
-			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in3) at (6.0,-2) {\footnotesize\strut \# 3};
-			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in4) at (8.0,-2) {\footnotesize\strut \# 4};
+		\begin{tikzpicture}[scale=0.7, transform shape]
+			\node[circle,white,fill=red,text width=0.8cm,align=center] (stm) at (-4.0,0) {\footnotesize\strut stim};
 
-			\draw[-stealth,thick,red] (stm) -- (ex1);
-			
+			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.1] (ex9) at (-2.0,0) {\footnotesize\strut \# 8};
+			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.8] (ex10) at (0.0,0) {\footnotesize\strut \# 9};
+			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex1) at (2.0,0) {\footnotesize\strut \# 0};
+			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex2) at (4.0,0) {\footnotesize\strut \# 1};
+			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex3) at (6.0,0) {\footnotesize\strut \# 2};
+			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.8] (ex4) at (8.0,0) {\footnotesize\strut \# 3};
+			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.1] (ex5) at (10.0,0) {\footnotesize\strut \# 4};
+
+			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.1] (in9) at (-2.0,-2) {\footnotesize\strut \# 8};
+			\node[circle,white,fill=blue,text width=0.8cm,align=center,opacity=0.8] (in10) at (0.0,-2) {\footnotesize\strut \# 9};
+			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in1) at (2.0,-2) {\footnotesize\strut \# 0};
+			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in2) at (4.0,-2) {\footnotesize\strut \# 1};
+			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in3) at (6.0,-2) {\footnotesize\strut \# 2};
+			\node[circle,white,fill=blue,text width=0.8cm,align=center,opacity=0.8] (in4) at (8.0,-2) {\footnotesize\strut \# 3};
+			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.1] (in5) at (10.0,-2) {\footnotesize\strut \# 4};
+
+			% \draw[-stealth,thick,red] (stm) -- (ex1);
+			\draw[-stealth,thick,red] (stm) to[out=50,in=130] (ex1);
+
+			\draw[-stealth,dashed,thick,red,opacity=0.5] (ex9) -- (ex10);
+			\draw[-stealth,thick,red] (ex10) -- (ex1);
 			\draw[-stealth,thick,red] (ex1) -- (ex2);
 			\draw[-stealth,thick,red] (ex2) -- (ex3);
 			\draw[-stealth,thick,red] (ex3) -- (ex4);
-			
+			\draw[-stealth,dashed,thick,red,opacity=0.5] (ex4) -- (ex5);
+
+			\draw[-stealth,dashed,thick,red,opacity=0.5] (ex9) -- (in10);
+			\draw[-stealth,thick,red] (ex10) -- (in1);
 			\draw[-stealth,thick,red] (ex1) -- (in2);
 			\draw[-stealth,thick,red] (ex2) -- (in3);
 			\draw[-stealth,thick,red] (ex3) -- (in4);
-			
+			\draw[-stealth,dashed,thick,red,opacity=0.5] (ex4) -- (in5);
+
+			\draw[-stealth,thick,blue,opacity=0.1] (in9) -- (ex9);
+			\draw[-stealth,thick,blue,opacity=0.8] (in10) -- (ex10);
 			\draw[-stealth,thick,blue] (in1) -- (ex1);
 			\draw[-stealth,thick,blue] (in2) -- (ex2);
 			\draw[-stealth,thick,blue] (in3) -- (ex3);
-			\draw[-stealth,thick,blue] (in4) -- (ex4);
+			\draw[-stealth,thick,blue,opacity=0.8] (in4) -- (ex4);
+			\draw[-stealth,thick,blue,opacity=0.1] (in5) -- (ex5);
 		\end{tikzpicture}
 	\end{center}
-	
+
 	\begin{columns}[onlytextwidth]
 		\begin{column}{0.48\textwidth}
 
 			\begin{itemize}
-				\item Lorem ipsum
+				\item create 20 neurons and connect them as depicted
+				\item create a transient stimulus to the first neuron
+				\item record and plot the spikes of the excitatory neurons
 			\end{itemize}
 		\end{column}
 		\hfill
 		\begin{column}{0.48\textwidth}
 			\begin{enumerate}
-				\item dolor sit amet
+				\item What happens if you disconnect the inhibitory neurons?
 			\end{enumerate}
 		\end{column}
 	\end{columns}
