@@ -212,7 +212,7 @@
 		\begin{column}{0.45\textwidth}
 			\begin{tikzpicture}[scale=0.9,transform shape]
 				\draw[step=0.5,gray,thin] (0,0) grid ++(5,4);
-				\draw[thick] (0,0) rectangle ++(5,4) node[pos=0.5,rectangle,fill=white] {synapses};
+				\draw[thick] (0,0) rectangle ++(5,4) node[pos=0.5,rectangle,fill=bg] {synapses};
 				\foreach \y in {0.25,0.75,...,4.0} {
 					\draw (-0.15,\y) -- ++(-0.4,0.23) -- ++(0,-0.46) -- cycle;
 					\draw[-stealth] (-1,\y) -- (-0.55,\y);
@@ -221,7 +221,7 @@
 				\draw (-1,-1) -- (-1,3.75);
 
 				\draw[step=0.5,gray,thin] (0,-1) grid ++(5,0.5);
-				\draw[thick] (0,-1) rectangle ++(5,0.5) node[pos=0.5,rectangle,fill=white] {neurons};
+				\draw[thick] (0,-1) rectangle ++(5,0.5) node[pos=0.5,rectangle,fill=bg] {neurons};
 
 				\foreach \x in {0.25,0.75,...,5.00}
 				\draw[-stealth] (\x,0) -- ++(0,-0.5);
