@@ -7,7 +7,7 @@
 \usepackage{minted}
 \setminted{fontsize=\scriptsize}
 
-\usepackage{tikz}
+\usepackage{circuitikz}
 \usetikzlibrary{chains}
 
 \definecolor{blue}{HTML}{005B82}
@@ -245,6 +245,32 @@
 		\end{column}
 	\end{columns}
 \end{frame}
+
+\begin{frame}{Leaky-integrate-and-fire neurons}
+	\begin{columns}[onlytextwidth]
+		\begin{column}{0.45\textwidth}
+			\begin{align*}
+				C_\text{m} \frac{\operatorname{d} V_\text{m}}{\operatorname{d} t} &= - g_\text{l} (V_\text{m} - E_\text{l}) + I_\text{syn} + I_\text{ext}
+			\end{align*}
+
+			\vspace{3ex}
+
+			\begin{tikzpicture}[scale=0.6,transform shape]
+				\draw (0,0) to[short] ++(0,1)
+							to[C,l=$C_\text{m}$] ++(0,2)
+							to[short,-*] ++(2,0)
+							to[R,l=$g_\text{m}$,-o] ++(0,-2) node[below] {$E_\text{l}$};
+
+				\draw (2,3) to[short] ++(2,0);
+				\node[anchor=in,buffer] (comp) at (4,3) {};
+
+				\draw (comp.out) to[short,-o] ++(1,0) node[right] {out};
+				\draw (5.5,3) to ++(0,-0.5);
+			\end{tikzpicture}
+		\end{column}
+	\end{columns}
+\end{frame}
+
 \section{Working with Spikey}
 
 \begin{frame}{PyNN API documentation}
