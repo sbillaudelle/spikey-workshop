@@ -333,34 +333,6 @@ pynn.record_v(neurons[0], "")
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Task 2: passing spikes}
-	\begin{columns}[onlytextwidth]
-		\begin{column}{0.48\textwidth}
-			\begin{center}
-				\begin{tikzpicture}
-					\node[circle,white,fill=red,text width=1.0cm,align=center] (stm) at (0.0,0) {\footnotesize\strut stim};
-					\node[circle,white,fill=red,text width=1.0cm,align=center] (nr1) at (2.0,0) {\footnotesize\strut \# 1};
-					\node[circle,white,fill=red,text width=1.0cm,align=center] (nr2) at (4.0,0) {\footnotesize\strut \# 2};
-
-					\draw[-stealth,thick,red] (stm) -- (nr1);
-					\draw[-stealth,thick,red] (nr1) -- (nr2);
-				\end{tikzpicture}
-			\end{center}
-
-			\begin{itemize}
-				\item extend the network by adding another neuron
-				\item record and plot the spikes of both neurons
-			\end{itemize}
-		\end{column}
-		\hfill
-		\begin{column}{0.48\textwidth}
-			\begin{enumerate}
-				\item think about different possibilities of creating and connecting the neurons
-				\item check that the stimulation is passed to the second neuron
-			\end{enumerate}
-		\end{column}
-	\end{columns}
-\end{frame}
 \begin{frame}{Task 3: a closed synfire chain}
 	\begin{center}
 		\begin{tikzpicture}[scale=0.7, transform shape]
@@ -408,23 +380,70 @@ pynn.record_v(neurons[0], "")
 			\draw[-stealth,thick,blue,opacity=0.1] (in5) -- (ex5);
 		\end{tikzpicture}
 	\end{center}
+		\begin{itemize}
+			\item create ten excitatory and ten inhibitory \textbf{populations} of neurons and connect them as depicted
+			\item create a transient stimulus to the zeroth excitatory population
+			\item record and plot the spikes of the neurons
+			\item record the membrane potential of a neuron of your choice
+		\end{itemize}
+\end{frame}
 
+\begin{frame}{Task 3: a closed synfire chain}
+	\begin{enumerate}
+		\item evaluate the stability of the chain by tweaking the weight parameters
+		\item what happens if you disconnect the inhibitory neurons
+		\item modify the chain length
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Task 4: a neural SR latch}
+	Think about how to create a simple SR latch (set/reset latch).\\[1em]
 	\begin{columns}[onlytextwidth]
 		\begin{column}{0.48\textwidth}
-
-			\begin{itemize}
-				\item create ten excitatory and ten inhibitory populations of neurons and connect them as depicted
-				\item create a transient stimulus to the first neuron
-				\item record and plot the spikes of the excitatory neurons
-			\end{itemize}
+			\begin{tabular}{c|c|l}
+				S & R & Q \\
+				\hline
+				0 & 0 & no change \\
+				0 & 1 & Q = 0, reset state \\
+				1 & 0 & Q = 1, set state \\
+				1 & 1 & undefined \\
+			\end{tabular}
 		\end{column}
 		\hfill
 		\begin{column}{0.48\textwidth}
-			\begin{enumerate}
-				\item What happens if you disconnect the inhibitory neurons?
-			\end{enumerate}
+			\begin{tikzpicture}[scale=1, transform shape]
+				\node[draw,fg,fill=bg,text width=1cm,align=center,minimum height=2.5cm] (latch) at (0,0) {};
+				\node[anchor=west] (S) at (-0.7,1) {S};
+				\node[anchor=west] (R) at (-0.7,-1) {R};
+				\node[anchor=east] (Q) at (0.7,0) {Q};
+
+				\draw[-stealth] (-1.2,1) -- (S);
+				\draw[-stealth] (-1.2,-1) -- (R);
+				\draw[-stealth] (Q) -- (1.2,0);
+			\end{tikzpicture}
 		\end{column}
 	\end{columns}
+\end{frame}
+
+\begin{frame}{Task 4: a neural SR latch}
+	\begin{center}
+		\begin{tikzpicture}[scale=1, transform shape]
+			\node[circle,white,fill=red,text width=0.8cm,align=center] (stm_exc) at (0,0.7) {\scriptsize\strut Set};
+			\node[circle,white,fill=red,text width=0.8cm,align=center] (srl) at (2,0) {\scriptsize\strut SRL};
+			\node[circle,white,fill=blue,text width=0.8cm,align=center] (stm_inh) at (0,-0.7) {\scriptsize\strut Reset};
+
+			\draw[-stealth,thick,red] (stm_exc) -- (srl);
+			\draw[-stealth,thick,blue] (stm_inh) -- (srl);
+			\draw[-stealth,thick,red] (srl) to[out=120,in=180] (2,1.5) to[out=0,in=60,-stealth] (srl);
+		\end{tikzpicture}
+	\end{center}
+		\begin{itemize}
+			\item create a population of latch neurons and project them onto themselfs
+			\item create a transient excitatory and a transient inhibitory stimulus to the latch neurons
+			\item set the stimuli such that the latch is switched on and off consecutively
+			\item record and plot the spikes of the neurons
+			\item record the membrane potential of the latch neuron
+		\end{itemize}
 \end{frame}
 
 \end{document}
