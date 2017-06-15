@@ -255,18 +255,27 @@
 
 			\vspace{3ex}
 
-			\begin{tikzpicture}[scale=0.6,transform shape]
-				\draw (0,0) to[short] ++(0,1)
-							to[C,l=$C_\text{m}$] ++(0,2)
-							to[short,-*] ++(2,0)
-							to[R,l=$g_\text{m}$,-o] ++(0,-2) node[below] {$E_\text{l}$};
+			\begin{center}
+				\begin{tikzpicture}[scale=0.6,transform shape]
+					\draw (0,0) to[short] ++(0,1)
+					to[C,l=$C_\text{m}$] ++(0,2)
+					to[short,-*] ++(2,0)
+					to[R,l=$g_\text{m}$,-o] ++(0,-2) node[below] {$E_\text{l}$};
 
-				\draw (2,3) to[short] ++(2,0);
-				\node[anchor=in,buffer] (comp) at (4,3) {};
+					\draw (2,3) to[short] ++(2,0);
+					\node[anchor=in,buffer] (comp) at (4,3) {};
 
-				\draw (comp.out) to[short,-o] ++(1,0) node[right] {out};
-				\draw (5.5,3) to ++(0,-0.5);
-			\end{tikzpicture}
+					\draw[-stealth] (comp.out) -- ++(2,0) node[right] {out};
+
+					\draw (3.5,3) to[short,*-] (3.5,1)
+					to ++(1.5,0)
+					to[push button,n=rst,-o] ++(2,0) node[right] {$V_\text{reset}$};
+
+					\draw (comp.out -| rst.north) to[short,*-] (rst.north);
+
+					\draw (0,0) -- ++(-0.25,0) -- node[pos=0.5,below] {\footnotesize GND} ++(0.5,0);
+				\end{tikzpicture}
+			\end{center}
 		\end{column}
 	\end{columns}
 \end{frame}
