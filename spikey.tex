@@ -225,7 +225,7 @@ stimulus = pynn.Population(1, pynn.SpikeSourcePoisson, poisson_params)
 \begin{frame}[fragile]{Synaptic connections}
 	\textbf{Connect all pre-synaptic to all post-synaptic neurons:}
 	\begin{minted}{python}
-weight = 15 * pynn.getMinExcWeight()
+weight = 15 * pynn.minExcWeight()
 conn = pynn.AllToAllConnector(weights=weight)
 proj = pynn.Projection(pre, post, conn)
 	\end{minted}
