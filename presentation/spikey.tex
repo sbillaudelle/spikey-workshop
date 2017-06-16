@@ -19,7 +19,7 @@
 \subtitle{4th HBP School}
 
 \date{\today}
-\author{Korbinian Schreiber \& Sebastian Billaudelle}
+\author{Sebastian Billaudelle \& Korbinian Schreiber}
 \institute{Kirchhoff-Institute for Physics, Heidelberg University}
 
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
@@ -202,8 +202,8 @@
 			\begin{center}
 				\begin{tikzpicture}[
 						start chain,
-						node distance=5mm, 
-						every node/.style={draw,on chain,join,inner sep=0.6ex,inner xsep=1.3ex}, 
+						node distance=5mm,
+						every node/.style={draw,on chain,join,inner sep=0.6ex,inner xsep=1.3ex},
 						every join/.style={stealth-stealth}
 					]
 					\node {\strut host};
@@ -214,13 +214,13 @@
 		\end{column}
 		\hfill
 		\begin{column}{0.50\textwidth}
-			
+
 			\textbf{Field-programmable gate array:}
 			\begin{itemize}
 				\item reconfigurable logic gates
 				\item experiment control and communication
 			\end{itemize}
-			
+
 			\vspace{3ex}
 
 			\textbf{Spikey:}
@@ -259,7 +259,7 @@
 				\item \SI{4}{bit} weights (0…15)
 				\item STDP and STP
 			\end{itemize}
-			
+
 			\vspace{3ex}
 
 			\textbf{Neurons:}
@@ -286,7 +286,7 @@
 								to[C,l=$C_\text{m}$] ++(0,2)
 								to[short,-*] ++(2,0)
 								to[R,l=$g_\text{m}$,-o] ++(0,-2) node[below] {$E_\text{l}$};
-					
+
 					\node[above] at (1,3) {$V_\text{m}$};
 
 					\draw (2,3) to[short] ++(2,0);
