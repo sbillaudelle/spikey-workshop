@@ -1,48 +1,48 @@
 %%
-%% This is file `beamerinnerthememetropolis.sty',
+%% This is file `beamerinnerthemekami.sty',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% beamerinnerthememetropolis.dtx  (with options: `package')
+%% beamerinnerthemekami.dtx  (with options: `package')
 %% ---------------------------------------------------------------------------
 %% Copyright 2015 Matthias Vogelgesang and the LaTeX community. A full list of
 %% contributors can be found at
-%% 
+%%
 %%     https://github.com/matze/mtheme/graphs/contributors
-%% 
+%%
 %% and the original template was based on the HSRM theme by Benjamin Weiss.
-%% 
+%%
 %% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
 %% International License (https://creativecommons.org/licenses/by-sa/4.0/).
 %% ---------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerinnerthememetropolis}[2017/01/23 Metropolis inner theme]
+\ProvidesPackage{beamerinnerthemekami}[2016/03/14 kami inner theme]
 \RequirePackage{etoolbox}
 \RequirePackage{keyval}
 \RequirePackage{calc}
 \RequirePackage{pgfopts}
 \RequirePackage{tikz}
 \pgfkeys{
-  /metropolis/inner/sectionpage/.cd,
+  /kami/inner/sectionpage/.cd,
     .is choice,
-    none/.code=\metropolis@disablesectionpage,
-    simple/.code={\metropolis@enablesectionpage
+    none/.code=\kami@disablesectionpage,
+    simple/.code={\kami@enablesectionpage
                   \setbeamertemplate{section page}[simple]},
-    progressbar/.code={\metropolis@enablesectionpage
+    progressbar/.code={\kami@enablesectionpage
                        \setbeamertemplate{section page}[progressbar]},
 }
 \pgfkeys{
-  /metropolis/inner/subsectionpage/.cd,
+  /kami/inner/subsectionpage/.cd,
     .is choice,
-    none/.code=\metropolis@disablesubsectionpage,
-    simple/.code={\metropolis@enablesubsectionpage
+    none/.code=\kami@disablesubsectionpage,
+    simple/.code={\kami@enablesubsectionpage
                   \setbeamertemplate{section page}[simple]},
-    progressbar/.code={\metropolis@enablesubsectionpage
+    progressbar/.code={\kami@enablesubsectionpage
                        \setbeamertemplate{section page}[progressbar]},
 }
-\newcommand{\metropolis@inner@setdefaults}{
-  \pgfkeys{/metropolis/inner/.cd,
+\newcommand{\kami@inner@setdefaults}{
+  \pgfkeys{/kami/inner/.cd,
     sectionpage=progressbar,
     subsectionpage=none
   }
@@ -86,19 +86,14 @@
   \vspace*{0.5em}
 }
 \setbeamertemplate{subtitle}{
-  \raggedright%
   \insertsubtitle%
   \par%
   \vspace*{0.5em}
 }
-\newlength{\metropolis@titleseparator@linewidth}
-\setlength{\metropolis@titleseparator@linewidth}{0.4pt}
 \setbeamertemplate{title separator}{
-  \tikzexternaldisable%
   \begin{tikzpicture}
-    \fill[fg] (0,0) rectangle (\textwidth, \metropolis@titleseparator@linewidth);
+    \fill[fg] (0,0) rectangle (\textwidth, 4.4pt);
   \end{tikzpicture}%
-  \tikzexternalenable%
   \par%
 }
 \setbeamertemplate{author}{
@@ -131,6 +126,7 @@
 \defbeamertemplate{section page}{progressbar}{
   \centering
   \begin{minipage}{22em}
+  % \begin{minipage}{\paperwidth}
     \raggedright
     \usebeamercolor[fg]{section title}
     \usebeamerfont{section title}
@@ -146,12 +142,12 @@
   \par
   \vspace{\baselineskip}
 }
-\newcommand{\metropolis@disablesectionpage}{
+\newcommand{\kami@disablesectionpage}{
   \AtBeginSection{
     % intentionally empty
   }
 }
-\newcommand{\metropolis@enablesectionpage}{
+\newcommand{\kami@enablesectionpage}{
   \AtBeginSection{
     \ifbeamer@inframe
       \sectionpage
@@ -163,12 +159,12 @@
 \setbeamertemplate{subsection page}{%
   \usebeamertemplate*{section page}
 }
-\newcommand{\metropolis@disablesubsectionpage}{
+\newcommand{\kami@disablesubsectionpage}{
   \AtBeginSubsection{
     % intentionally empty
   }
 }
-\newcommand{\metropolis@enablesubsectionpage}{
+\newcommand{\kami@enablesubsectionpage}{
   \AtBeginSubsection{
     \ifbeamer@inframe
       \subsectionpage
@@ -177,29 +173,25 @@
     \fi
   }
 }
-\newlength{\metropolis@progressonsectionpage}
-\newlength{\metropolis@progressonsectionpage@linewidth}
-\setlength{\metropolis@progressonsectionpage@linewidth}{0.4pt}
+\newlength{\kami@progressonsectionpage}
 \setbeamertemplate{progress bar in section page}{
-  \setlength{\metropolis@progressonsectionpage}{%
+  \setlength{\kami@progressonsectionpage}{%
     \textwidth * \ratio{\insertframenumber pt}{\inserttotalframenumber pt}%
   }%
-  \tikzexternaldisable%
   \begin{tikzpicture}
-    \fill[bg] (0,0) rectangle (\textwidth, \metropolis@progressonsectionpage@linewidth);
-    \fill[fg] (0,0) rectangle (\metropolis@progressonsectionpage, \metropolis@progressonsectionpage@linewidth);
+    \fill[bg] (0,0) rectangle (\textwidth, 4.4pt);
+    \fill[fg] (0,0) rectangle (\kami@progressonsectionpage, 4.4pt);
   \end{tikzpicture}%
-  \tikzexternalenable%
 }
 \def\inserttotalframenumber{100}
-\newlength{\metropolis@blocksep}
-\newlength{\metropolis@blockadjust}
-\setlength{\metropolis@blocksep}{0.75ex}
-\setlength{\metropolis@blockadjust}{0.25ex}
-\providecommand{\metropolis@strut}{%
+\newlength{\kami@blocksep}
+\newlength{\kami@blockadjust}
+\setlength{\kami@blocksep}{0.75ex}
+\setlength{\kami@blockadjust}{0.25ex}
+\providecommand{\kami@strut}{%
   \vphantom{ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz()}%
 }
-\newcommand{\metropolis@block}[1]{
+\newcommand{\kami@block}[1]{
   \par\vskip\medskipamount%
   \setlength{\parskip}{0pt}
   \ifbeamercolorempty[bg]{block title#1}{%
@@ -209,15 +201,15 @@
   }%
   {%
     \begin{beamercolorbox}[
-      sep=\dimexpr\metropolis@blocksep-\metropolis@blockadjust\relax,
-      leftskip=\metropolis@blockadjust,
-      rightskip=\dimexpr\metropolis@blockadjust plus 4em\relax
+      sep=\dimexpr\kami@blocksep-\kami@blockadjust\relax,
+      leftskip=\kami@blockadjust,
+      rightskip=\dimexpr\kami@blockadjust plus 4em\relax
     ]{block title#1}%
   }}%
       \usebeamerfont*{block title#1}%
-      \metropolis@strut%
+      \kami@strut%
       \insertblocktitle%
-      \metropolis@strut%
+      \kami@strut%
   \end{beamercolorbox}%
   \nointerlineskip%
   \ifbeamercolorempty[bg]{block body#1}{%
@@ -225,15 +217,15 @@
   \ifbeamercolorempty[bg]{block body}{%
     \begin{beamercolorbox}[vmode]{block body#1}%
   }{%
-    \begin{beamercolorbox}[sep=\metropolis@blocksep, vmode]{block body#1}%
-    \vspace{-\metropolis@parskip}
+    \begin{beamercolorbox}[sep=\kami@blocksep, vmode]{block body#1}%
+    \vspace{-\kami@parskip}
   }}%
       \usebeamerfont{block body#1}%
-      \setlength{\parskip}{\metropolis@parskip}%
+      \setlength{\parskip}{\kami@parskip}%
 }
-\setbeamertemplate{block begin}{\metropolis@block{}}
-\setbeamertemplate{block alerted begin}{\metropolis@block{ alerted}}
-\setbeamertemplate{block example begin}{\metropolis@block{ example}}
+\setbeamertemplate{block begin}{\kami@block{}}
+\setbeamertemplate{block alerted begin}{\kami@block{ alerted}}
+\setbeamertemplate{block example begin}{\kami@block{ example}}
 \setbeamertemplate{block end}{\end{beamercolorbox}\vspace*{0.2ex}}
 \setbeamertemplate{block alerted end}{\end{beamercolorbox}\vspace*{0.2ex}}
 \setbeamertemplate{block example end}{\end{beamercolorbox}\vspace*{0.2ex}}
@@ -245,9 +237,9 @@
   \raggedright
   \usebeamercolor{footnote}\hbox to 0.8em{\hfil\insertfootnotemark}\insertfootnotetext\par%
 }
-\newlength{\metropolis@parskip}
-\setlength{\metropolis@parskip}{0.5em}
-\setlength{\parskip}{\metropolis@parskip}
+\newlength{\kami@parskip}
+\setlength{\kami@parskip}{0.5em}
+\setlength{\parskip}{\kami@parskip}
 \linespread{1.15}
 \define@key{beamerframe}{c}[true]{% centered
   \beamer@frametopskip=0pt plus 1fill\relax%
@@ -256,9 +248,9 @@
   \beamer@framebottomskipautobreak=0pt plus .6\paperheight\relax%
   \def\beamer@initfirstlineunskip{}%
 }
-\providebool{metropolis@standout}
+\providebool{kami@standout}
 \define@key{beamerframe}{standout}[true]{%
-  \booltrue{metropolis@standout}
+  \booltrue{kami@standout}
   \begingroup
     \setkeys{beamerframe}{c}
     \setkeys{beamerframe}{noframenumbering}
@@ -273,21 +265,18 @@
         bg=palette primary.bg
       }
     }
-    \setbeamercolor{local structure}{
-      fg=palette primary.fg
-    }
-    \centering
-    \usebeamercolor[fg]{palette primary}
-    \usebeamerfont{standout}
+  \centering
+  \usebeamercolor[fg]{palette primary}
+  \usebeamerfont{standout}
 }
   \apptocmd{\beamer@reseteecodes}{%
-    \ifbool{metropolis@standout}{
+    \ifbool{kami@standout}{
       \endgroup
-      \boolfalse{metropolis@standout}
+      \boolfalse{kami@standout}
     }{}
   }{}{}
-\metropolis@inner@setdefaults
-\ProcessPgfPackageOptions{/metropolis/inner}
+\kami@inner@setdefaults
+\ProcessPgfPackageOptions{/kami/inner}
 \endinput
 %%
-%% End of file `beamerinnerthememetropolis.sty'.
+%% End of file `beamerinnerthemekami.sty'.

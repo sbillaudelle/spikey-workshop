@@ -1,64 +1,69 @@
 %%
-%% This is file `beamercolorthememetropolis.sty',
+%% This is file `beamercolorthemekami.sty',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% beamercolorthememetropolis.dtx  (with options: `package')
+%% beamercolorthemekami.dtx  (with options: `package')
 %% ---------------------------------------------------------------------------
 %% Copyright 2015 Matthias Vogelgesang and the LaTeX community. A full list of
 %% contributors can be found at
-%% 
+%%
 %%     https://github.com/matze/mtheme/graphs/contributors
-%% 
+%%
 %% and the original template was based on the HSRM theme by Benjamin Weiss.
-%% 
+%%
 %% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
 %% International License (https://creativecommons.org/licenses/by-sa/4.0/).
 %% ---------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamercolorthememetropolis}[2017/01/23 Metropolis color theme]
+\ProvidesPackage{beamercolorthemekami}[2016/03/14 kami color theme]
 \RequirePackage{pgfopts}
 \pgfkeys{
-  /metropolis/color/block/.cd,
+  /kami/color/block/.cd,
     .is choice,
-    transparent/.code=\metropolis@block@transparent,
-    fill/.code=\metropolis@block@fill,
+    transparent/.code=\kami@block@transparent,
+    fill/.code=\kami@block@fill,
 }
 \pgfkeys{
-  /metropolis/color/background/.cd,
+  /kami/color/background/.cd,
     .is choice,
-    dark/.code=\metropolis@colors@dark,
-    light/.code=\metropolis@colors@light,
+    dark/.code=\kami@colors@dark,
+    light/.code=\kami@colors@light,
 }
-\newcommand{\metropolis@color@setdefaults}{
-  \pgfkeys{/metropolis/color/.cd,
+\newcommand{\kami@color@setdefaults}{
+  \pgfkeys{/kami/color/.cd,
     background=light,
     block=transparent,
   }
 }
-\definecolor{mDarkBrown}{HTML}{604c38}
-\definecolor{mDarkTeal}{HTML}{23373b}
-\definecolor{mLightBrown}{HTML}{EB811B}
-\definecolor{mLightGreen}{HTML}{14B03D}
-\newcommand{\metropolis@colors@dark}{
+% \definecolor{mDarkBrown}{HTML}{604C38}
+\definecolor{mDarkTeal}{HTML}{21252B}%#21252B
+% \definecolor{kColAlerted}{HTML}{b6f442}
+\definecolor{kColAlerted}{HTML}{FFFC31}%#FFFC31
+\definecolor{kColExample}{HTML}{FFFC31}%#FFFC31
+\newcommand{\kami@colors@dark}{
   \setbeamercolor{normal text}{%
-    fg=black!2,
+    fg=white,
     bg=mDarkTeal
   }
-  \usebeamercolor[fg]{normal text}
 }
-\newcommand{\metropolis@colors@light}{
+\newcommand{\kami@colors@light}{
   \setbeamercolor{normal text}{%
     fg=mDarkTeal,
-    bg=black!2
+    bg=white
   }
 }
 \setbeamercolor{alerted text}{%
-  fg=mLightBrown
+  % fg=kColAlerted,
+  fg=mDarkTeal,
+  bg=kColAlerted
 }
+\newcommand{\boxalert}[1]{{%
+  \usebeamercolor{alerted text}\colorbox{bg}{\color{fg}{#1}}%
+}}
 \setbeamercolor{example text}{%
-  fg=mLightGreen
+  fg=kColExample
 }
 \setbeamercolor{titlelike}{use=normal text, parent=normal text}
 \setbeamercolor{author}{use=normal text, parent=normal text}
@@ -67,17 +72,18 @@
 \setbeamercolor{structure}{use=normal text, fg=normal text.fg}
 \setbeamercolor{palette primary}{%
   use=normal text,
-  fg=normal text.bg,
-  bg=normal text.fg
+  fg=normal text.fg,
+  bg=normal text.bg
 }
 \setbeamercolor{frametitle}{%
   use=palette primary,
   parent=palette primary
 }
 \setbeamercolor{progress bar}{%
-  use=alerted text,
-  fg=alerted text.fg,
-  bg=alerted text.fg!50!black!30
+  use=normal text,
+  fg=normal text.fg,
+  bg=normal text.bg
+  % bg=normal text.fg!50!black!30
 }
 \setbeamercolor{title separator}{
   use=progress bar,
@@ -91,7 +97,7 @@
   use=progress bar,
   parent=progress bar
 }
-\newcommand{\metropolis@block@transparent}{
+\newcommand{\kami@block@transparent}{
   \setbeamercolor{block title}{%
     use=normal text,
     fg=normal text.fg,
@@ -101,7 +107,7 @@
     bg=
   }
 }
-\newcommand{\metropolis@block@fill}{
+\newcommand{\kami@block@fill}{
   \setbeamercolor{block title}{%
     use=normal text,
     fg=normal text.fg,
@@ -126,9 +132,9 @@
 \setbeamercolor{block body example}{use=block body, parent=block body}
 \setbeamercolor{footnote}{fg=normal text.fg!90}
 \setbeamercolor{footnote mark}{fg=.}
-\metropolis@color@setdefaults
-\ProcessPgfPackageOptions{/metropolis/color}
+\kami@color@setdefaults
+\ProcessPgfPackageOptions{/kami/color}
 \mode<all>
 \endinput
 %%
-%% End of file `beamercolorthememetropolis.sty'.
+%% End of file `beamercolorthemekami.sty'.

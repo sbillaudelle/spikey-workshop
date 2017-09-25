@@ -1,5 +1,8 @@
 \documentclass[aspectratio=169]{beamer}
-\usetheme{metropolis}
+%\usetheme{metropolis}
+\usetheme[sectionpage=simple, numbering=none, progressbar=head, background=light, block=transparent]{kami}
+% \setbeamersize{text margin left=2.1ex,text margin right=2.1ex}
+% \usefonttheme[onlymath]{serif}
 
 \usepackage{esdiff}
 \usepackage{siunitx}
@@ -10,13 +13,17 @@
 \usepackage{circuitikz}
 \usetikzlibrary{chains}
 
-\definecolor{blue}{HTML}{005B82}
-\definecolor{red}{HTML}{AF5A50}
-\definecolor{green}{HTML}{7D966E}
-\definecolor{orange}{HTML}{D7AA50}
+% \definecolor{blue}{HTML}{005B82}
+% \definecolor{red}{HTML}{AF5A50}
+% \definecolor{green}{HTML}{7D966E}
+% \definecolor{orange}{HTML}{D7AA50}
+\definecolor{blue}{HTML}{306E7C}%#306E7C
+\definecolor{red}{HTML}{FF5656}%#FF5656
+\definecolor{green}{HTML}{60EA90}%#60EA90
+\definecolor{orange}{HTML}{FFFC31}%#FFFC31
 
 \title{BrainScaleS Workshop}
-\subtitle{4th HBP School}
+\subtitle{Visit by the SP10 TUM Roboy team}
 
 \date{\today}
 \author{Sebastian Billaudelle \& Korbinian Schreiber}
@@ -37,13 +44,13 @@
 	\begin{columns}[onlytextwidth]
 		\begin{column}{0.45\textwidth}
 			\textbf{WIFI:} \\
-			ESSID: spikey \\
-			password: spikey@obergurgl
+			ESSID: DemoBrainScaleS \\
+			password: BrainScaleS
 
 			\vspace{3ex}
 
 			\textbf{Jupyter notebooks:} \\
-			\url{http://obss3:88xx}
+			\url{192.168.124.1:8000}
 		\end{column}
 		\hfill
 		\begin{column}{0.45\textwidth}
@@ -58,141 +65,141 @@
 	\end{columns}
 \end{frame}
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{assets/three_column_background.pdf}}%
-\begin{frame}[fragile]
-	\frametitle{Analog Neuromorphic Hardware}
+% {
+% \usebackgroundtemplate{\includegraphics[width=\paperwidth]{assets/three_column_background.pdf}}%
+% \begin{frame}[fragile]
+% 	\frametitle{Analog Neuromorphic Hardware}
+%
+% 	\vspace{-30pt}
+% 	\begin{columns}
+% 		\column{0.33\paperwidth}
+% 		\begin{center}
+% 			\circled{1}
+% 			\vspace{20pt}
+%
+% 			observations
+% 		\end{center}
+%
+% 		\column{0.33\paperwidth}
+% 		\begin{center}
+% 			\circled{2}
+% 			\vspace{20pt}
+%
+% 			mathematical model
+% 		\end{center}
+%
+% 		\column{0.33\paperwidth}
+% 		\begin{center}
+% 			\circled{3}
+% 			\vspace{20pt}
+%
+% 			hardware realization
+% 		\end{center}
+% 	\end{columns}
+%
+% 	\vspace{10pt}
+%
+% 	\begin{columns}
+% 		\column{0.33\paperwidth}
+% 		\begin{center}
+% 			\includegraphics[width=0.8\textwidth]{assets/trace.pdf}
+% 		\end{center}
+%
+% 		\column{0.33\paperwidth}
+% 		\begin{center}
+% 			\vspace{-20pt}
+% 			\begin{gather*}
+% 				\scriptstyle
+% 				C \diff{V}{t} = -g_\text{L} \left( V - E_\text{L} \right) + I_\text{syn}(t) \\
+% 			\end{gather*}
+% 		\end{center}
+%
+% 		\column{0.33\paperwidth}
+% 		\begin{center}
+% 			\includegraphics[width=0.8\textwidth]{assets/spikey.jpg}
+% 		\end{center}
+% 	\end{columns}
+% \end{frame}
+% }
 
-	\vspace{-30pt}
-	\begin{columns}
-		\column{0.33\paperwidth}
-		\begin{center}
-			\circled{1}
-			\vspace{20pt}
-
-			observations
-		\end{center}
-
-		\column{0.33\paperwidth}
-		\begin{center}
-			\circled{2}
-			\vspace{20pt}
-
-			mathematical model
-		\end{center}
-
-		\column{0.33\paperwidth}
-		\begin{center}
-			\circled{3}
-			\vspace{20pt}
-
-			hardware realization
-		\end{center}
-	\end{columns}
-
-	\vspace{10pt}
-
-	\begin{columns}
-		\column{0.33\paperwidth}
-		\begin{center}
-			\includegraphics[width=0.8\textwidth]{assets/trace.pdf}
-		\end{center}
-
-		\column{0.33\paperwidth}
-		\begin{center}
-			\vspace{-20pt}
-			\begin{gather*}
-				\scriptstyle
-				C \diff{V}{t} = -g_\text{L} \left( V - E_\text{L} \right) + I_\text{syn}(t) \\
-			\end{gather*}
-		\end{center}
-
-		\column{0.33\paperwidth}
-		\begin{center}
-			\includegraphics[width=0.8\textwidth]{assets/spikey.jpg}
-		\end{center}
-	\end{columns}
-\end{frame}
-}
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{assets/five_column_background.pdf}}%
-\begin{frame}[fragile]
-	\frametitle{Roadmap}
-
-	\begin{columns}
-		\column{0.2\paperwidth}
-		\begin{center}
-			\circled{2004}
-		\end{center}
-		\column{0.2\paperwidth}
-		\begin{center}
-			\circled{2010}
-		\end{center}
-		\column{0.2\paperwidth}
-		\begin{center}
-			\circled{2015}
-		\end{center}
-		\column{0.2\paperwidth}
-		\begin{center}
-			\circled{2017}
-		\end{center}
-		\column{0.2\paperwidth}
-		\begin{center}
-			\circled{2022}
-		\end{center}
-	\end{columns}
-
-	\vspace{20pt}
-
-	\begin{columns}[T]
-		\column{0.2\paperwidth}
-		\begin{center}
-			\textbf{\color{mDarkTeal}Spikey}
-		\end{center}
-		\begin{itemize}
-				\item single chip system
-				\item 384 LIF neurons
-		\end{itemize}
-
-		\column{0.2\paperwidth}
-		\begin{center}
-			\textbf{\color{mDarkTeal}HICANN}
-		\end{center}
-		\begin{itemize}
-				\item \SI{180}{\nano\meter} CMOS
-				\item 512 AdEx neurons
-		\end{itemize}
-
-		\column{0.2\paperwidth}
-		\begin{center}
-			\textbf{\color{mDarkTeal}20 Wafer System}
-		\end{center}
-		\begin{itemize}
-			\item 4 million neurons
-			\item 0.9 billion synapses
-		\end{itemize}
-
-		\column{0.2\paperwidth}
-		\begin{center}
-			\textbf{\color{mDarkTeal}HICANN DLS}
-		\end{center}
-		\begin{itemize}
-			\item \SI{65}{\nano\meter} CMOS
-			\item PPU: integrated processing unit for advanced plasticity
-		\end{itemize}
-
-		\column{0.2\paperwidth}
-		\begin{center}
-			\textbf{\color{mDarkTeal}500 Wafer System}
-		\end{center}
-		\begin{itemize}
-			\item 500 million neurons
-			\item 130 billion synapses
-		\end{itemize}
-	\end{columns}
-\end{frame}
-}
+% {
+% \usebackgroundtemplate{\includegraphics[width=\paperwidth]{assets/five_column_background.pdf}}%
+% \begin{frame}[fragile]
+% 	\frametitle{Roadmap}
+%
+% 	\begin{columns}
+% 		\column{0.2\paperwidth}
+% 		\begin{center}
+% 			\circled{2004}
+% 		\end{center}
+% 		\column{0.2\paperwidth}
+% 		\begin{center}
+% 			\circled{2010}
+% 		\end{center}
+% 		\column{0.2\paperwidth}
+% 		\begin{center}
+% 			\circled{2015}
+% 		\end{center}
+% 		\column{0.2\paperwidth}
+% 		\begin{center}
+% 			\circled{2017}
+% 		\end{center}
+% 		\column{0.2\paperwidth}
+% 		\begin{center}
+% 			\circled{2022}
+% 		\end{center}
+% 	\end{columns}
+%
+% 	\vspace{20pt}
+%
+% 	\begin{columns}[T]
+% 		\column{0.2\paperwidth}
+% 		\begin{center}
+% 			\textbf{\color{mDarkTeal}Spikey}
+% 		\end{center}
+% 		\begin{itemize}
+% 				\item single chip system
+% 				\item 384 LIF neurons
+% 		\end{itemize}
+%
+% 		\column{0.2\paperwidth}
+% 		\begin{center}
+% 			\textbf{\color{mDarkTeal}HICANN}
+% 		\end{center}
+% 		\begin{itemize}
+% 				\item \SI{180}{\nano\meter} CMOS
+% 				\item 512 AdEx neurons
+% 		\end{itemize}
+%
+% 		\column{0.2\paperwidth}
+% 		\begin{center}
+% 			\textbf{\color{mDarkTeal}20 Wafer System}
+% 		\end{center}
+% 		\begin{itemize}
+% 			\item 4 million neurons
+% 			\item 0.9 billion synapses
+% 		\end{itemize}
+%
+% 		\column{0.2\paperwidth}
+% 		\begin{center}
+% 			\textbf{\color{mDarkTeal}HICANN DLS}
+% 		\end{center}
+% 		\begin{itemize}
+% 			\item \SI{65}{\nano\meter} CMOS
+% 			\item PPU: integrated processing unit for advanced plasticity
+% 		\end{itemize}
+%
+% 		\column{0.2\paperwidth}
+% 		\begin{center}
+% 			\textbf{\color{mDarkTeal}500 Wafer System}
+% 		\end{center}
+% 		\begin{itemize}
+% 			\item 500 million neurons
+% 			\item 130 billion synapses
+% 		\end{itemize}
+% 	\end{columns}
+% \end{frame}
+% }
 
 \begin{frame}{System overview}
 	\begin{columns}[onlytextwidth]
@@ -203,12 +210,12 @@
 				\begin{tikzpicture}[
 						start chain,
 						node distance=5mm,
-						every node/.style={draw,on chain,join,inner sep=0.6ex,inner xsep=1.3ex},
+						every node/.style={draw,on chain,join,inner sep=0.6ex,inner xsep=1.3ex, fill=fg},
 						every join/.style={stealth-stealth}
 					]
-					\node {\strut host};
-					\node {\strut FPGA};
-					\node {\strut Spikey};
+					\node {\color{bg}\strut Host};
+					\node {\color{bg}\strut FPGA};
+					\node {\color{bg}\strut Spikey};
 				\end{tikzpicture}
 			\end{center}
 		\end{column}
@@ -477,117 +484,151 @@ pynn.record_v(neurons[0], "")
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Task 3: a closed synfire chain}
-	\begin{center}
-		\begin{tikzpicture}[scale=0.7, transform shape]
-			\node[circle,white,fill=red,text width=0.8cm,align=center] (stm) at (-4.0,0) {\footnotesize\strut stim};
+% \begin{frame}{Task 3: a closed synfire chain}
+% 	\begin{center}
+% 		\begin{tikzpicture}[scale=0.7, transform shape]
+% 			\node[circle,white,fill=red,text width=0.8cm,align=center] (stm) at (-4.0,0) {\footnotesize\strut stim};
+%
+% 			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.1] (ex9) at (-2.0,0) {\footnotesize\strut \# 8};
+% 			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.8] (ex10) at (0.0,0) {\footnotesize\strut \# 9};
+% 			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex1) at (2.0,0) {\footnotesize\strut \# 0};
+% 			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex2) at (4.0,0) {\footnotesize\strut \# 1};
+% 			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex3) at (6.0,0) {\footnotesize\strut \# 2};
+% 			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.8] (ex4) at (8.0,0) {\footnotesize\strut \# 3};
+% 			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.1] (ex5) at (10.0,0) {\footnotesize\strut \# 4};
+%
+% 			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.1] (in9) at (-2.0,-2) {\footnotesize\strut \# 8};
+% 			\node[circle,white,fill=blue,text width=0.8cm,align=center,opacity=0.8] (in10) at (0.0,-2) {\footnotesize\strut \# 9};
+% 			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in1) at (2.0,-2) {\footnotesize\strut \# 0};
+% 			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in2) at (4.0,-2) {\footnotesize\strut \# 1};
+% 			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in3) at (6.0,-2) {\footnotesize\strut \# 2};
+% 			\node[circle,white,fill=blue,text width=0.8cm,align=center,opacity=0.8] (in4) at (8.0,-2) {\footnotesize\strut \# 3};
+% 			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.1] (in5) at (10.0,-2) {\footnotesize\strut \# 4};
+%
+% 			% \draw[-stealth,thick,red] (stm) -- (ex1);
+% 			\draw[-stealth,thick,red] (stm) to[out=50,in=130] (ex1);
+%
+% 			\draw[-stealth,dashed,thick,red,opacity=0.5] (ex9) -- (ex10);
+% 			\draw[-stealth,thick,red] (ex10) -- (ex1);
+% 			\draw[-stealth,thick,red] (ex1) -- (ex2);
+% 			\draw[-stealth,thick,red] (ex2) -- (ex3);
+% 			\draw[-stealth,thick,red] (ex3) -- (ex4);
+% 			\draw[-stealth,dashed,thick,red,opacity=0.5] (ex4) -- (ex5);
+%
+% 			\draw[-stealth,dashed,thick,red,opacity=0.5] (ex9) -- (in10);
+% 			\draw[-stealth,thick,red] (ex10) -- (in1);
+% 			\draw[-stealth,thick,red] (ex1) -- (in2);
+% 			\draw[-stealth,thick,red] (ex2) -- (in3);
+% 			\draw[-stealth,thick,red] (ex3) -- (in4);
+% 			\draw[-stealth,dashed,thick,red,opacity=0.5] (ex4) -- (in5);
+%
+% 			\draw[-stealth,thick,blue,opacity=0.1] (in9) -- (ex9);
+% 			\draw[-stealth,thick,blue,opacity=0.8] (in10) -- (ex10);
+% 			\draw[-stealth,thick,blue] (in1) -- (ex1);
+% 			\draw[-stealth,thick,blue] (in2) -- (ex2);
+% 			\draw[-stealth,thick,blue] (in3) -- (ex3);
+% 			\draw[-stealth,thick,blue,opacity=0.8] (in4) -- (ex4);
+% 			\draw[-stealth,thick,blue,opacity=0.1] (in5) -- (ex5);
+% 		\end{tikzpicture}
+% 	\end{center}
+% 		\begin{itemize}
+% 			\item create ten excitatory and ten inhibitory \textbf{populations} of neurons and connect them as depicted
+% 			\item create a transient stimulus to the zeroth excitatory population
+% 			\item record and plot the spikes of the neurons
+% 			\item record the membrane potential of a neuron of your choice
+% 		\end{itemize}
+% \end{frame}
+%
+% \begin{frame}{Task 3: a closed synfire chain}
+% 	\begin{enumerate}
+% 		\item evaluate the stability of the chain by tweaking the weight parameters
+% 		\item what happens if you disconnect the inhibitory neurons?
+% 		\item modify the chain length
+% 	\end{enumerate}
+% \end{frame}
 
-			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.1] (ex9) at (-2.0,0) {\footnotesize\strut \# 8};
-			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.8] (ex10) at (0.0,0) {\footnotesize\strut \# 9};
-			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex1) at (2.0,0) {\footnotesize\strut \# 0};
-			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex2) at (4.0,0) {\footnotesize\strut \# 1};
-			\node[circle,white,fill=red,text width=0.8cm,align=center] (ex3) at (6.0,0) {\footnotesize\strut \# 2};
-			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.8] (ex4) at (8.0,0) {\footnotesize\strut \# 3};
-			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.1] (ex5) at (10.0,0) {\footnotesize\strut \# 4};
+% \begin{frame}{Task 4: a neural SR latch}
+% 	Think about how to create a simple SR latch (set/reset latch).\\[1em]
+% 	\begin{columns}[onlytextwidth]
+% 		\begin{column}{0.48\textwidth}
+% 			\begin{tabular}{c|c|l}
+% 				S & R & Q \\
+% 				\hline
+% 				0 & 0 & no change \\
+% 				0 & 1 & Q = 0, reset state \\
+% 				1 & 0 & Q = 1, set state \\
+% 				1 & 1 & undefined \\
+% 			\end{tabular}
+% 		\end{column}
+% 		\hfill
+% 		\begin{column}{0.48\textwidth}
+% 			\begin{tikzpicture}[scale=1, transform shape]
+% 				\node[draw,fg,fill=bg,text width=1cm,align=center,minimum height=2.5cm] (latch) at (0,0) {};
+% 				\node[anchor=west] (S) at (-0.7,1) {S};
+% 				\node[anchor=west] (R) at (-0.7,-1) {R};
+% 				\node[anchor=east] (Q) at (0.7,0) {Q};
+%
+% 				\draw[-stealth] (-1.2,1) -- (S);
+% 				\draw[-stealth] (-1.2,-1) -- (R);
+% 				\draw[-stealth] (Q) -- (1.2,0);
+% 			\end{tikzpicture}
+% 		\end{column}
+% 	\end{columns}
+% \end{frame}
+%
+% \begin{frame}{Task 4: a neural SR latch}
+% 	\begin{center}
+% 		\begin{tikzpicture}[scale=1, transform shape]
+% 			\node[circle,white,fill=red,text width=0.8cm,align=center] (stm_exc) at (0,0.7) {\scriptsize\strut Set};
+% 			\node[circle,white,fill=red,text width=0.8cm,align=center] (srl) at (2,0) {\scriptsize\strut SRL};
+% 			\node[circle,white,fill=blue,text width=0.8cm,align=center] (stm_inh) at (0,-0.7) {\scriptsize\strut Reset};
+%
+% 			\draw[-stealth,thick,red] (stm_exc) -- (srl);
+% 			\draw[-stealth,thick,blue] (stm_inh) -- (srl);
+% 			\draw[-stealth,thick,red] (srl) to[out=120,in=180] (2,1.5) to[out=0,in=60,-stealth] (srl);
+% 		\end{tikzpicture}
+% 	\end{center}
+% 		\begin{itemize}
+% 			\item create a population of latch neurons and project them onto themselves
+% 			\item create a transient excitatory and a transient inhibitory stimulus to the latch neurons
+% 			\item set the stimuli such that the latch is switched on and off consecutively
+% 			\item record and plot the spikes of the neurons
+% 			\item record the membrane potential of a latch neuron
+% 		\end{itemize}
+% \end{frame}
 
-			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.1] (in9) at (-2.0,-2) {\footnotesize\strut \# 8};
-			\node[circle,white,fill=blue,text width=0.8cm,align=center,opacity=0.8] (in10) at (0.0,-2) {\footnotesize\strut \# 9};
-			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in1) at (2.0,-2) {\footnotesize\strut \# 0};
-			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in2) at (4.0,-2) {\footnotesize\strut \# 1};
-			\node[circle,white,fill=blue,text width=0.8cm,align=center] (in3) at (6.0,-2) {\footnotesize\strut \# 2};
-			\node[circle,white,fill=blue,text width=0.8cm,align=center,opacity=0.8] (in4) at (8.0,-2) {\footnotesize\strut \# 3};
-			\node[circle,white,fill=red,text width=0.8cm,align=center,opacity=0.1] (in5) at (10.0,-2) {\footnotesize\strut \# 4};
-
-			% \draw[-stealth,thick,red] (stm) -- (ex1);
-			\draw[-stealth,thick,red] (stm) to[out=50,in=130] (ex1);
-
-			\draw[-stealth,dashed,thick,red,opacity=0.5] (ex9) -- (ex10);
-			\draw[-stealth,thick,red] (ex10) -- (ex1);
-			\draw[-stealth,thick,red] (ex1) -- (ex2);
-			\draw[-stealth,thick,red] (ex2) -- (ex3);
-			\draw[-stealth,thick,red] (ex3) -- (ex4);
-			\draw[-stealth,dashed,thick,red,opacity=0.5] (ex4) -- (ex5);
-
-			\draw[-stealth,dashed,thick,red,opacity=0.5] (ex9) -- (in10);
-			\draw[-stealth,thick,red] (ex10) -- (in1);
-			\draw[-stealth,thick,red] (ex1) -- (in2);
-			\draw[-stealth,thick,red] (ex2) -- (in3);
-			\draw[-stealth,thick,red] (ex3) -- (in4);
-			\draw[-stealth,dashed,thick,red,opacity=0.5] (ex4) -- (in5);
-
-			\draw[-stealth,thick,blue,opacity=0.1] (in9) -- (ex9);
-			\draw[-stealth,thick,blue,opacity=0.8] (in10) -- (ex10);
-			\draw[-stealth,thick,blue] (in1) -- (ex1);
-			\draw[-stealth,thick,blue] (in2) -- (ex2);
-			\draw[-stealth,thick,blue] (in3) -- (ex3);
-			\draw[-stealth,thick,blue,opacity=0.8] (in4) -- (ex4);
-			\draw[-stealth,thick,blue,opacity=0.1] (in5) -- (ex5);
-		\end{tikzpicture}
-	\end{center}
-		\begin{itemize}
-			\item create ten excitatory and ten inhibitory \textbf{populations} of neurons and connect them as depicted
-			\item create a transient stimulus to the zeroth excitatory population
-			\item record and plot the spikes of the neurons
-			\item record the membrane potential of a neuron of your choice
-		\end{itemize}
-\end{frame}
-
-\begin{frame}{Task 3: a closed synfire chain}
-	\begin{enumerate}
-		\item evaluate the stability of the chain by tweaking the weight parameters
-		\item what happens if you disconnect the inhibitory neurons?
-		\item modify the chain length
-	\end{enumerate}
-\end{frame}
-
-\begin{frame}{Task 4: a neural SR latch}
-	Think about how to create a simple SR latch (set/reset latch).\\[1em]
+\begin{frame}{Task 3: bouncing vehicle}
 	\begin{columns}[onlytextwidth]
-		\begin{column}{0.48\textwidth}
-			\begin{tabular}{c|c|l}
-				S & R & Q \\
-				\hline
-				0 & 0 & no change \\
-				0 & 1 & Q = 0, reset state \\
-				1 & 0 & Q = 1, set state \\
-				1 & 1 & undefined \\
-			\end{tabular}
-		\end{column}
-		\hfill
-		\begin{column}{0.48\textwidth}
+	\begin{column}{0.58\textwidth}
+		\begin{center}
 			\begin{tikzpicture}[scale=1, transform shape]
-				\node[draw,fg,fill=bg,text width=1cm,align=center,minimum height=2.5cm] (latch) at (0,0) {};
-				\node[anchor=west] (S) at (-0.7,1) {S};
-				\node[anchor=west] (R) at (-0.7,-1) {R};
-				\node[anchor=east] (Q) at (0.7,0) {Q};
+				\node[circle,white,fill=red,text width=0.8cm,align=center] (stm_exc) at (0,0.7) {\scriptsize\strut Right};
+				\node[circle,white,fill=blue,text width=0.8cm,align=center] (stm_inh) at (0,-0.7) {\scriptsize\strut Left};
+				\node[circle,white,fill=red,text width=0.8cm,align=center] (mn) at (2,0) {\scriptsize\strut MN};
+				\node[circle,white,fill=blue,text width=0.8cm,align=center] (inh_dummy) at (4,-0.7) {\scriptsize\strut $\cdot -1$};
+				\node[circle,white,fill=red,text width=0.8cm,align=center] (bias) at (4,0.7) {\scriptsize\strut bias};
+				\node[circle,white,fill=red,text width=0.8cm,align=center] (inh) at (6,0) {\scriptsize\strut $\sim$MN};
+				\node[circle,white,fill=fg,text width=0.8cm,align=center] (motor) at (4,-2.7) {\scriptsize\strut Motor};
 
-				\draw[-stealth] (-1.2,1) -- (S);
-				\draw[-stealth] (-1.2,-1) -- (R);
-				\draw[-stealth] (Q) -- (1.2,0);
+				\draw[-stealth,thick,red] (stm_exc) -- (mn);
+				\draw[-stealth,thick,blue] (stm_inh) -- (mn);
+				\draw[-stealth,thick,red] (mn) to[out=120,in=180] (2,1.5) to[out=0,in=60,-stealth] (mn);
+				\draw[-stealth,thick,red] (mn) -- (inh_dummy);
+				\draw[-stealth,thick,red] (bias) -- (inh);
+				\draw[-stealth,thick,blue] (inh_dummy) -- (inh);
+				\draw[-stealth,thick,red] (mn) -- (motor);
+				\draw[-stealth,thick,red] (inh) -- (motor);
 			\end{tikzpicture}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}{Task 4: a neural SR latch}
-	\begin{center}
-		\begin{tikzpicture}[scale=1, transform shape]
-			\node[circle,white,fill=red,text width=0.8cm,align=center] (stm_exc) at (0,0.7) {\scriptsize\strut Set};
-			\node[circle,white,fill=red,text width=0.8cm,align=center] (srl) at (2,0) {\scriptsize\strut SRL};
-			\node[circle,white,fill=blue,text width=0.8cm,align=center] (stm_inh) at (0,-0.7) {\scriptsize\strut Reset};
-
-			\draw[-stealth,thick,red] (stm_exc) -- (srl);
-			\draw[-stealth,thick,blue] (stm_inh) -- (srl);
-			\draw[-stealth,thick,red] (srl) to[out=120,in=180] (2,1.5) to[out=0,in=60,-stealth] (srl);
-		\end{tikzpicture}
-	\end{center}
+		\end{center}
+	\end{column}
+	\hfill
+	\begin{column}{0.38\textwidth}
 		\begin{itemize}
-			\item create a population of latch neurons and project them onto themselves
-			\item create a transient excitatory and a transient inhibitory stimulus to the latch neurons
-			\item set the stimuli such that the latch is switched on and off consecutively
-			\item record and plot the spikes of the neurons
-			\item record the membrane potential of a latch neuron
+			\item transient right/left stimulus sets/resets the state of the motor neuron (MN) population
+			\item MN and $\sim$MN determine the motor direction
 		\end{itemize}
+	\end{column}
+	\end{columns}
 \end{frame}
 
 \end{document}
